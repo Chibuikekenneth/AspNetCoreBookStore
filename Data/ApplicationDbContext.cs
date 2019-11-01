@@ -89,7 +89,7 @@ namespace AspNetCoreBookStore.Data
             });
 
              modelbuilder.Entity<Book>().HasData(new Book {
-                BookId = 3,
+                BookId = 4,
                 Name = " University Entrance Practice Software (For UTME)",
                 Author = "STP Information Services Ltd",
                 ShortDescription = "UTME CBT Exam Software",

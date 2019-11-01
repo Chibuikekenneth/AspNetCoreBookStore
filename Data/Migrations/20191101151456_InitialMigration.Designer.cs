@@ -4,14 +4,16 @@ using AspNetCoreBookStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AspNetCoreBookStore.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191101151456_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,60 +69,6 @@ namespace AspNetCoreBookStore.Data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            BookId = 1,
-                            Author = "Ian Sommerville",
-                            CategoryId = 1,
-                            ImageUrl = "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/85/579781/1.jpg?8371",
-                            Instock = true,
-                            IsBookOftheWeek = true,
-                            LongDescription = "The ninth edition of Software Engineering presents a broad perspective of software engineering, focusing on the processes and techniques fundamental to the creation of reliable, software systems. Increased coverage of agile methods and software reuse, along with coverage of 'traditional' plan-driven software engineering, gives readers the most up-to-date view of the field currently available. Practical case studies, a full set of easy-to-access supplements, and extensive web resources make teaching the course easier than ever.",
-                            Name = "Software Engineering 9th Edition By Ian Sommerville",
-                            Price = 0m,
-                            ShortDescription = "Intended for introductory and advanced courses in software engineering."
-                        },
-                        new
-                        {
-                            BookId = 2,
-                            Author = "Robert T. Kiyosaki",
-                            CategoryId = 2,
-                            ImageUrl = "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/72/039022/1.jpg?8072",
-                            Instock = true,
-                            IsBookOftheWeek = true,
-                            LongDescription = "Explode the myth that you need to earn a high income to become richChallenge the belief that your house is an assetShow parents why they can't rely on the school system to teach their kids about moneyDefine once and for all an asset and a liabilityTeach you what to teach your kids about money for their future financial success.",
-                            Name = "Rich Dad Poor Dad",
-                            Price = 0m,
-                            ShortDescription = "Explode the myth that you need to earn a high income."
-                        },
-                        new
-                        {
-                            BookId = 3,
-                            Author = "Dag Heward Mills ",
-                            CategoryId = 2,
-                            ImageUrl = "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/86/89324/1.jpg?1192",
-                            Instock = true,
-                            IsBookOftheWeek = true,
-                            LongDescription = "Bishop Dag Heward-Mills, an exceptional Christian leader, reveals one of his secrets: 'If anyone were to ask me what the greatest secret of my relationship with God is, I would say, without hesitation, that it is the power of the quiet times I have with Him everyday.' He has decided to write this book.",
-                            Name = " Understanding The Quiet Time (the secret of spiritual strength)",
-                            Price = 0m,
-                            ShortDescription = "Bishop Dag Heward-Mills, an exceptional Christian leader, reveals one of his secrets."
-                        },
-                        new
-                        {
-                            BookId = 4,
-                            Author = "STP Information Services Ltd",
-                            CategoryId = 2,
-                            ImageUrl = "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/86/89324/1.jpg?1192",
-                            Instock = true,
-                            IsBookOftheWeek = true,
-                            LongDescription = "UTME CBT Exam Software. JPro can set exam, mark it, score you and monitor your progress.It also includes Maths tutor, Grammar tutor and more. You can also use it as a Mock Exam simulator.",
-                            Name = " University Entrance Practice Software (For UTME)",
-                            Price = 0m,
-                            ShortDescription = "UTME CBT Exam Software"
-                        });
                 });
 
             modelBuilder.Entity("AspNetCoreBookStore.Models.Category", b =>
@@ -139,28 +87,6 @@ namespace AspNetCoreBookStore.Data.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 1,
-                            CategoryName = "Technical Books"
-                        },
-                        new
-                        {
-                            CategoryId = 2,
-                            CategoryName = "Inspirational Books"
-                        },
-                        new
-                        {
-                            CategoryId = 3,
-                            CategoryName = "Religious Books"
-                        },
-                        new
-                        {
-                            CategoryId = 4,
-                            CategoryName = "Novels"
-                        });
                 });
 
             modelBuilder.Entity("AspNetCoreBookStore.Models.Order", b =>
