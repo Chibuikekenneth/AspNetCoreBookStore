@@ -65,6 +65,6 @@ namespace AspNetCoreBookStore.Models
 
         [BindNever]
         [ScaffoldColumn(false)]
-        public decimal OrderPlaced { get; set; }
+        public DateTime OrderPlaced { get; set; }
     }
 }

@@ -3,7 +3,7 @@ using AspNetCoreBookStore.Models;
 
 namespace AspNetCoreBookStore.Interfaces
 {
-    public interface IBookRespository
+    public interface IBookRepository
     {
         IEnumerable<Book> AllBooks { get; }
         IEnumerable<Book> BooksOfTheWeek();

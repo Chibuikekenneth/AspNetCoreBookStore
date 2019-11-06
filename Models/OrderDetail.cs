@@ -7,7 +7,7 @@ namespace AspNetCoreBookStore.Models
         public int OrderDetailId { get; set; }
         public int OrderId { get; set; }
         public int Amount { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public Book Book { get; set; }
         public Order Order { get; set; }
     }
