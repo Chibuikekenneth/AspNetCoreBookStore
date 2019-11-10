@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AspNetCoreBookStore.Models;
+using AspNetCoreBookStore.Interfaces;
 
 namespace AspNetCoreBookStore.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBookRepository _service;
 
-        public HomeController()
+        public HomeController(IBookRepository service)
         {
-            
+            _service = service;
         }
 
         public IActionResult Index()
