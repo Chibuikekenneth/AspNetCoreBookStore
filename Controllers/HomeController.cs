@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using AspNetCoreBookStore.Models;
 using AspNetCoreBookStore.Interfaces;
+using AspNetCoreBookStore.ViewModels;
 
 namespace AspNetCoreBookStore.Controllers
 {
@@ -21,7 +22,11 @@ namespace AspNetCoreBookStore.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                bookOfTheWeek = _service.BooksOfTheWeek()
+            };
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()

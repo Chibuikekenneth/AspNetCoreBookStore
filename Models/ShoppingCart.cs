@@ -87,7 +87,7 @@ namespace AspNetCoreBookStore.Models
             return localAmount;
         }
 
-        public List<ShoppingCartItem> GetShoppingItems()
+        public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ?? (ShoppingCartItems = _appDbContext.ShoppingCartItems.Where(c =>                             c.ShoppingCartId == ShoppingCartId)
                         .Include(s => s.Book)

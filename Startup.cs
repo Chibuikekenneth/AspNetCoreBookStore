@@ -52,6 +52,7 @@ namespace AspNetCoreBookStore
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
