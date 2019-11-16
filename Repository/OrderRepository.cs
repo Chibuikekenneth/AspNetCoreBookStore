@@ -27,11 +27,11 @@ namespace AspNetCoreBookStore.Repository
 
             //adding the order with its details
 
-            foreach (var shoppingCartItem in shoppingCartItems)
+            foreach (var shoppingCartItem in shoppingCartItems) 
             {
                 var orderDetail = new OrderDetail
                 {
-                    Amount = shoppingCartItem.Amount,
+                    Amount = shoppingCartItem.Amount, 
                     Price = shoppingCartItem.Book.Price
                 };
 

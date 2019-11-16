@@ -21,6 +21,8 @@ namespace AspNetCoreBookStore.Controllers
         public ViewResult Index()
         {
             var Items = _shoppingCart.GetShoppingCartItems();
+
+            //assigning the List Prop to items, before passing to the viewModel
             _shoppingCart.ShoppingCartItems = Items;
 
             var shoppingCartViewModel = new ShoppingCartViewModel

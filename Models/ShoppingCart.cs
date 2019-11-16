@@ -84,7 +84,7 @@ namespace AspNetCoreBookStore.Models
                 }
             }
             _appDbContext.SaveChanges();
-            return localAmount;
+            return localAmount; 
         }
 
         public List<ShoppingCartItem> GetShoppingCartItems()
