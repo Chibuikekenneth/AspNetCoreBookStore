@@ -12,6 +12,9 @@ using AspNetCoreBookStore.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AspNetCoreBookStore.Interfaces;
+using AspNetCoreBookStore.Repository;
+using AspNetCoreBookStore.Models;
 
 namespace AspNetCoreBookStore
 {
@@ -33,6 +36,12 @@ namespace AspNetCoreBookStore
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddScoped<IOrderRepository, OrderRepository>();
+
             services.AddRazorPages();
             services.AddSession();
         }
